@@ -1,7 +1,10 @@
 /**
  * Theme
  */
-const primary = {
+const theme = {
+  fonts: {
+    primary: 'Arial, sans-serif',
+  },
   palette: {
     primary: {
       white: 'rgb(255, 255, 255)',
@@ -13,4 +16,4 @@ const primary = {
   },
 };
 
-export default primary;
+export default theme;

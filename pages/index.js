@@ -1,10 +1,16 @@
 // Dependencies
 import React from 'react';
+import styled from 'styled-components';
+
+// Styled Components
+const Title = styled.h1`
+  color: blue;
+`;
 
 // Component
 const Index = () => (
   <div>
-    <h1>Hello, World!</h1>
+    <Title>Hello, World!</Title>
   </div>
 );
 

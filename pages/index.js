@@ -11,6 +11,7 @@ import Layout from '../layouts/main';
 /**
  * Components
  */
+import Articles from '../components/organisms/Articles';
 import ArticleCard from '../components/molecules/ArticleCard';
 
 /**
@@ -18,13 +19,48 @@ import ArticleCard from '../components/molecules/ArticleCard';
  */
 const Index = () => (
   <Layout>
-    <ArticleCard
-      imageAlt="Striped shirt"
-      imageSrc="https://picsum.photos/280/280"
-      price="$15.00"
-      title="Striped shirt"
-      sale
-    />
+    <Articles perRow={4}>
+      <ArticleCard
+        className="articleCard--Product"
+        imageAlt="Striped shirt"
+        imageSrc="https://picsum.photos/280/280"
+        price="$15.00"
+        title="Striped shirt"
+        sale
+      />
+      <ArticleCard
+        className="articleCard--Product"
+        imageAlt="Striped shirt"
+        imageSrc="https://picsum.photos/280/280"
+        price="$15.00"
+        title="Striped shirt"
+        sale
+      />
+      <ArticleCard
+        className="articleCard--Product"
+        imageAlt="Striped shirt"
+        imageSrc="https://picsum.photos/280/280"
+        price="$15.00"
+        title="Striped shirt"
+        sale
+      />
+      <ArticleCard
+        className="articleCard--Product"
+        imageAlt="Striped shirt"
+        imageSrc="https://picsum.photos/280/280"
+        price="$15.00"
+        title="Striped shirt"
+        sale
+      />
+      <ArticleCard
+        className="articleCard--Product"
+        imageAlt="Striped shirt"
+        imageSrc="https://picsum.photos/280/280"
+        price="$15.00"
+        title="Striped shirt"
+        sale
+      />
+    </Articles>
   </Layout>
 );
 

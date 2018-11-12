@@ -27,6 +27,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${theme.fonts.primary};
     font-size: 1rem;
   }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
 `;
 
 /**

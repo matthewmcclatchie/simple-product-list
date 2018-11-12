@@ -6,6 +6,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 /**
+ * Components
+ */
+import Alert from '../../atoms/Alert';
+
+/**
  * Styled Components
  */
 const Wrap = styled.article`
@@ -24,6 +29,10 @@ const ArticleCard = ({ text }) => (
   <Wrap>
 
     <Header>
+      <div>
+        <Alert type="exclusive">Exclusive</Alert>
+      </div>
+
       <p>{text}</p>
     </Header>
 

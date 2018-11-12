@@ -2,7 +2,11 @@
  * Dependencies
  */
 import React from 'react';
-// import styled from 'styled-components';
+
+/**
+ * Layouts
+ */
+import Layout from '../layouts/main';
 
 /**
  * Components
@@ -13,9 +17,9 @@ import ArticleCard from '../components/molecules/ArticleCard';
  * Component
  */
 const Index = () => (
-  <div>
+  <Layout>
     <ArticleCard text="gerghgriejo" />
-  </div>
+  </Layout>
 );
 
 // Export

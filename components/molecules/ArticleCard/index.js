@@ -9,6 +9,7 @@ import styled from 'styled-components';
  * Components
  */
 import Alert from '../../atoms/Alert';
+import Title from '../../atoms/Title';
 
 /**
  * Styled Components
@@ -20,13 +21,6 @@ const Wrap = styled.article`
 const Header = styled.header`
   border: 1px solid blue;
 `;
-
-
-// TITLE
-const Title = styled.div`
-  color: blue;
-`;
-
 
 /**
  * Component

@@ -18,7 +18,13 @@ import ArticleCard from '../components/molecules/ArticleCard';
  */
 const Index = () => (
   <Layout>
-    <ArticleCard text="gerghgriejo" />
+    <ArticleCard
+      imageAlt="Striped shirt"
+      imageSrc="https://picsum.photos/280/280"
+      price="$15.00"
+      title="Striped shirt"
+      sale
+    />
   </Layout>
 );
 

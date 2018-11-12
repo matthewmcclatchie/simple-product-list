@@ -21,21 +21,43 @@ const Header = styled.header`
   border: 1px solid blue;
 `;
 
+
+// TITLE
+const Title = styled.div`
+  color: blue;
+`;
+
+
 /**
  * Component
  * @param {object} props
  */
-const ArticleCard = ({ text }) => (
+const ArticleCard = ({
+  imageAlt,
+  imageSrc,
+  price,
+  title,
+  sale,
+  exclusive,
+}) => (
   <Wrap>
+    <div>
+      <img src={imageSrc} alt={imageAlt} />
+    </div>
 
     <Header>
+      {/*
+        Ternary operators with empty negative condition.
+        Will only show Component if boolean value is true.
+      */}
+      { sale && <Alert type="sale">Sale</Alert> }
+      { exclusive && <Alert type="exclusive">Exclusive</Alert> }
+
       <div>
-        <Alert type="exclusive">Exclusive</Alert>
+        <Title as="h1">{title}</Title>
+        <Title as="h2">{price}</Title>
       </div>
-
-      <p>{text}</p>
     </Header>
-
   </Wrap>
 );
 
@@ -44,7 +66,12 @@ const ArticleCard = ({ text }) => (
  * defaultProps
  */
 ArticleCard.defaultProps = {
-  text: '',
+  imageAlt: null,
+  imageSrc: null,
+  price: null,
+  title: null,
+  sale: false,
+  exclusive: false,
 };
 
 
@@ -52,7 +79,12 @@ ArticleCard.defaultProps = {
  * PropTypes
  */
 ArticleCard.propTypes = {
-  text: PropTypes.string,
+  imageAlt: PropTypes.string,
+  imageSrc: PropTypes.string,
+  price: PropTypes.string,
+  title: PropTypes.string,
+  sale: PropTypes.bool,
+  exclusive: PropTypes.bool,
 };
 
 export default ArticleCard;

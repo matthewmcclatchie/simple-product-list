@@ -38,7 +38,9 @@ const Layout = ({ children }) => (
     <Normalize />
     <GlobalStyle />
     <ThemeProvider theme={theme}>
-      {children}
+      <div>
+        {children}
+      </div>
     </ThemeProvider>
   </React.Fragment>
 );

@@ -9,18 +9,18 @@ import styled, { css } from 'styled-components';
  * Styled Components
  */
 const Wrap = styled.div`
+  color: rgb(255, 255, 255);
   display: inline-block;
   padding: 1rem;
 
   /* If 'type' prop is equal to sale */
-  ${props => props.type === 'sale' && css`
-    background: rgb(189, 63, 59);
+  ${({ type, theme }) => type === 'sale' && css`
+    background: ${theme.palette.highlight.red};
   `}
 
-  /* If 'type' prop is equal to sale */
-  ${props => props.type === 'exclusive' && css`
-    background: rgb(68, 150, 42);
-    color: rgb(255, 255, 255);
+  /* If 'type' prop is equal to exclusive */
+  ${({ type, theme }) => type === 'exclusive' && css`
+    background: ${theme.palette.highlight.green};
   `}
 `;
 

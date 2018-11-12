@@ -1,0 +1,17 @@
+{
+  "name": "simple-product-list",
+  "version": "1.0.0",
+  "description": "A simple product list using React",
+  "main": "index.js",
+  "repository": "https://github.com/matthewmcclatchie/simple-product-list.git",
+  "author": "Matthew Mcclatchie <matthewmcclatchie@me.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cz-conventional-changelog": "2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

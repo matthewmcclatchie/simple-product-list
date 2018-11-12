@@ -14,7 +14,7 @@ import ArticleCard from '../components/molecules/ArticleCard';
  */
 const Index = () => (
   <div>
-    <ArticleCard text="gerhgriejo" />
+    <ArticleCard text="gerghgriejo" />
   </div>
 );
 

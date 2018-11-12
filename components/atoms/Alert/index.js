@@ -8,7 +8,7 @@ import styled, { css } from 'styled-components';
 /**
  * Styled Components
  */
-const Wrap = styled.div`
+const Wrap = styled.b`
   color: rgb(255, 255, 255);
   display: inline-block;
   padding: 1rem;
@@ -23,6 +23,11 @@ const Wrap = styled.div`
     background: ${theme.palette.highlight.green};
     padding: 1rem 2rem;
   `}
+
+  /* Override default bolding of text in this instance */
+  b {
+    font-weight: 300;
+  }
 `;
 
 /**

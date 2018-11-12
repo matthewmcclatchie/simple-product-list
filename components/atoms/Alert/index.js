@@ -21,6 +21,7 @@ const Wrap = styled.div`
   /* If 'type' prop is equal to exclusive */
   ${({ type, theme }) => type === 'exclusive' && css`
     background: ${theme.palette.highlight.green};
+    padding: 1rem 2rem;
   `}
 `;
 

@@ -4,12 +4,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Normalize } from 'styled-normalize';
-import { ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 /**
  * Theme
  */
-import primary from './theme';
+import theme from './theme';
+
+/**
+ * Global styles
+ */
+const GlobalStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    /* theme variable here relates to import on line 12, as technically the theme is set on the ThemeProvider */
+    font-family: ${theme.fonts.primary};
+    font-size: 1rem;
+  }
+`;
 
 /**
  * Component
@@ -18,7 +36,8 @@ import primary from './theme';
 const Layout = ({ children }) => (
   <React.Fragment>
     <Normalize />
-    <ThemeProvider theme={primary}>
+    <GlobalStyle />
+    <ThemeProvider theme={theme}>
       {children}
     </ThemeProvider>
   </React.Fragment>

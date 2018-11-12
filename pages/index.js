@@ -1,16 +1,20 @@
-// Dependencies
+/**
+ * Dependencies
+ */
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-// Styled Components
-const Title = styled.h1`
-  color: blue;
-`;
+/**
+ * Components
+ */
+import ArticleCard from '../components/molecules/ArticleCard';
 
-// Component
+/**
+ * Component
+ */
 const Index = () => (
   <div>
-    <Title>Hello, World!</Title>
+    <ArticleCard text="gerhgriejo" />
   </div>
 );
 

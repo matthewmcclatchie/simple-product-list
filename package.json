@@ -6,13 +6,18 @@
   "repository": "https://github.com/matthewmcclatchie/simple-product-list.git",
   "author": "Matthew Mcclatchie <matthewmcclatchie@me.com>",
   "license": "MIT",
-  "devDependencies": {
-    "cz-conventional-changelog": "2.1.0"
-  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "2.1.0"
   },
   "dependencies": {
     "next": "^7.0.2",

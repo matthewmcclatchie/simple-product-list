@@ -14,13 +14,29 @@ import styled from 'styled-components';
  * Styled Components
  */
 const Wrap = styled.div`
-  border: 1px solid gold;
+  ${({ theme }) => (`
+    border-left: 1px solid ${theme.palette.primary.lightGrey};
+    border-top: 1px solid ${theme.palette.primary.lightGrey};
+  `)}
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 81.25rem;
 
   article {
-    flex: 0 0 ${props => 100 / Math.round(props.perRow)}%;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: 30rem) {
+      flex: 0 0 50%;
+    }
+
+    @media (min-width: 50rem) {
+      flex: 0 0 ${props => 100 / Math.round(props.perRow)}%;
+    }
   }
 `;
 

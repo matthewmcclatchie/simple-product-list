@@ -1,9 +1,14 @@
+const sorter = require('apparel-sorter');
+
 /**
  * Return array of sizes gathered from JSON data
  * @param {array} products
  */
 export default function getSizes(products) {
-  return products
+  /**
+   * Store filtered sizes Array in variable;
+   */
+  const sizes = products
     /**
      * Map over products Array and return size property.
      */
@@ -19,4 +24,9 @@ export default function getSizes(products) {
      * If they don't match, then the current item already exists in the array.
      */
     .filter((item, index, self) => index === self.indexOf(item));
+
+  /**
+   * Run sizes array through apparel-sorter and return.
+   */
+  return sorter.sort(sizes);
 }

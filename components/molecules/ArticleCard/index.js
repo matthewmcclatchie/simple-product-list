@@ -36,7 +36,7 @@ const ArticleCard = ({
 }) => (
   <Wrap>
     <div>
-      <img src={imageSrc} alt={imageAlt} />
+      <img src={`/static/images/${imageSrc}`} alt={imageAlt} />
     </div>
 
     <Header>

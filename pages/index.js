@@ -6,7 +6,7 @@ import React from 'react';
 /**
  * Data
  */
-import products from '../services/products.json';
+import allProducts from '../services/products.json';
 import getSizes from '../services/products';
 /**
  * Layouts
@@ -22,56 +22,39 @@ import ArticleCard from '../components/molecules/ArticleCard';
 /**
  * Component
  */
-const Index = props => (
+const Index = ({ products, sizes }) => (
   <Layout>
     <Articles perRow={4}>
-      <ArticleCard
-        className="articleCard--Product"
-        imageAlt="Striped shirt"
-        imageSrc="https://picsum.photos/280/280"
-        price="$15.00"
-        title="Striped shirt"
-        sale
-      />
-      <ArticleCard
-        className="articleCard--Product"
-        imageAlt="Striped shirt"
-        imageSrc="https://picsum.photos/280/280"
-        price="$15.00"
-        title="Striped shirt"
-        sale
-      />
-      <ArticleCard
-        className="articleCard--Product"
-        imageAlt="Striped shirt"
-        imageSrc="https://picsum.photos/280/280"
-        price="$15.00"
-        title="Striped shirt"
-        sale
-      />
-      <ArticleCard
-        className="articleCard--Product"
-        imageAlt="Striped shirt"
-        imageSrc="https://picsum.photos/280/280"
-        price="$15.00"
-        title="Striped shirt"
-        sale
-      />
-      <ArticleCard
-        className="articleCard--Product"
-        imageAlt="Striped shirt"
-        imageSrc="https://picsum.photos/280/280"
-        price="$15.00"
-        title="Striped shirt"
-        sale
-      />
+      {
+        products.map(({
+          isSale,
+          isExclusive,
+          price,
+          productImage,
+          productName,
+          size,
+        }) => (
+          <ArticleCard
+            key={productName}
+            className="articleCard--Product"
+            sale={isSale}
+            exclusive={isExclusive}
+            price={price}
+            imageSrc={productImage}
+            imageAlt={productName}
+            title={productName}
+            sizes={size}
+          />
+        ))
+      }
     </Articles>
   </Layout>
 );
 
 Index.getInitialProps = async function IndexGIP() {
   return {
-    sizes: getSizes(products),
+    products: allProducts,
+    sizes: getSizes(allProducts),
   };
 };
 

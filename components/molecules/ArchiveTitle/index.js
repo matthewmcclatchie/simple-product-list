@@ -44,13 +44,16 @@ const ArchiveTitle = ({ children, filterOptions }) => (
       <Title as="h1">{children}</Title>
     </div>
 
-    <div>
-      <Select defaultValue="label" id="filterSizes" name="filterSizes">
-        <option value="label" disabled>Filter by size:</option>
-        <option value="all">All sizes</option>
-        { filterOptions.map(item => <option key={item} value="item">{item}</option>) }
-      </Select>
-    </div>
+    {/* Display Select Component if filter options are passed */}
+    { filterOptions && (
+      <div>
+        <Select defaultValue="label" id="filterSizes" name="filterSizes">
+          <option value="label" disabled>Filter by size:</option>
+          <option value="all">All sizes</option>
+          { filterOptions.map(item => <option key={item} value="item">{item}</option>) }
+        </Select>
+      </div>
+    ) }
   </Wrap>
 );
 

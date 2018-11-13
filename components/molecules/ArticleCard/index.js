@@ -34,16 +34,16 @@ const HeaderDetails = styled.div`
     flex: 0 1 auto;
   }
 
-  h1, h2 {
+  h2, h3 {
     margin: 0;
   }
 
-  h1 {
+  h2 {
     padding-right: 0.75rem;
   }
 
   @media (min-width: 64rem) {
-    h2 {
+    h3 {
       font-size: 2.25rem;
     }
   }
@@ -75,10 +75,10 @@ const ArticleCard = ({
 
       <HeaderDetails>
         <div>
-          <Title as="h1">{title}</Title>
+          <Title as="h2">{title}</Title>
         </div>
         <div>
-          <Title as="h2">{price}</Title>
+          <Title as="h3">{price}</Title>
         </div>
       </HeaderDetails>
     </header>

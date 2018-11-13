@@ -4,6 +4,11 @@
 import React from 'react';
 
 /**
+ * Data
+ */
+import products from '../services/products.json';
+import getSizes from '../services/products';
+/**
  * Layouts
  */
 import Layout from '../layouts/main';
@@ -17,7 +22,7 @@ import ArticleCard from '../components/molecules/ArticleCard';
 /**
  * Component
  */
-const Index = () => (
+const Index = props => (
   <Layout>
     <Articles perRow={4}>
       <ArticleCard
@@ -63,6 +68,12 @@ const Index = () => (
     </Articles>
   </Layout>
 );
+
+Index.getInitialProps = async function IndexGIP() {
+  return {
+    sizes: getSizes(products),
+  };
+};
 
 // Export
 export default Index;

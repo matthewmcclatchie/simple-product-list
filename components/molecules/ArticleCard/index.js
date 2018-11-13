@@ -15,11 +15,42 @@ import Title from '../../atoms/Title';
  * Styled Components
  */
 const Wrap = styled.article`
-  border: 1px solid red;
+  ${({ theme }) => (`
+    border-bottom: 1px solid ${theme.palette.primary.lightGrey};
+    border-right: 1px solid ${theme.palette.primary.lightGrey};
+  `)}
+
+  padding: 0.625rem;
 `;
 
-const Header = styled.header`
-  border: 1px solid blue;
+const HeaderDetails = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+
+  div {
+    flex: 0 1 auto;
+  }
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  h1 {
+    padding-right: 0.75rem;
+  }
+
+  @media (min-width: 64rem) {
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+`;
+
+const Image = styled.img`
+  margin: 0 auto 0.5rem auto;
 `;
 
 /**
@@ -35,23 +66,22 @@ const ArticleCard = ({
   exclusive,
 }) => (
   <Wrap>
-    <div>
-      <img src={`/static/images/${imageSrc}`} alt={imageAlt} />
-    </div>
+    <Image src={`/static/images/${imageSrc}`} alt={imageAlt} />
 
-    <Header>
-      {/*
-        Ternary operators with empty negative condition.
-        Will only show Component if boolean value is true.
-      */}
+    <header>
+      {/* Conditional rendering will only show Component if boolean value is true. */}
       { sale && <Alert type="sale">Sale</Alert> }
       { exclusive && <Alert type="exclusive">Exclusive</Alert> }
 
-      <div>
-        <Title as="h1">{title}</Title>
-        <Title as="h2">{price}</Title>
-      </div>
-    </Header>
+      <HeaderDetails>
+        <div>
+          <Title as="h1">{title}</Title>
+        </div>
+        <div>
+          <Title as="h2">{price}</Title>
+        </div>
+      </HeaderDetails>
+    </header>
   </Wrap>
 );
 

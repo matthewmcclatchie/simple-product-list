@@ -45,11 +45,21 @@ class Index extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const cachedHits = localStorage.getItem('myData');
+    if (cachedHits) {
+      this.setState({ displaySizes: cachedHits });
+      return;
+    }
+  }
+
   // This method will be sent to the child component
   handler(event) {
     this.setState({
       displaySizes: event.target.value,
     });
+
+    localStorage.setItem('myData', event.target.value);
   }
 
   // Render the child component and set the action property with the handler as value
@@ -57,7 +67,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <Wrap>
-          <ArchiveTitle filterOptions={this.props.sizes} action={this.handler}>
+          <ArchiveTitle filterOptions={this.props.sizes} action={this.handler} filterDefault={this.state.displaySizes}>
             Women's Tops
           </ArchiveTitle>
 

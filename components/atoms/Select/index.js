@@ -17,6 +17,7 @@ const Select = ({
   action,
   children,
   defaultValue,
+  filterDefault,
   id,
   name,
 }) => {
@@ -24,7 +25,7 @@ const Select = ({
   if (!children) return null;
 
   return (
-    <select defaultValue={defaultValue} id={id} name={name} onChange={action}>
+    <select value={filterDefault} id={id} name={name} onChange={action}>
       {children}
     </select>
   );

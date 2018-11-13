@@ -38,7 +38,7 @@ const Wrap = styled.header`
  * Component
  * @param {object} props
  */
-const ArchiveTitle = ({ action, children, filterOptions }) => (
+const ArchiveTitle = ({ action, children, filterOptions, filterDefault }) => (
   <Wrap>
     <div>
       <Title as="h1">{children}</Title>
@@ -47,7 +47,7 @@ const ArchiveTitle = ({ action, children, filterOptions }) => (
     {/* Display Select Component if filter options are passed */}
     { filterOptions && (
       <div>
-        <Select defaultValue="label" id="filterSizes" name="filterSizes" action={action}>
+        <Select filterDefault={filterDefault} id="filterSizes" name="filterSizes" action={action}>
           <option value="label" disabled>Filter by size:</option>
           <option value="all">All sizes</option>
           { filterOptions.map(item => <option key={item} value={item}>{item}</option>) }
@@ -63,6 +63,7 @@ const ArchiveTitle = ({ action, children, filterOptions }) => (
 ArchiveTitle.defaultProps = {
   action: () => null,
   filterOptions: null,
+  filterDefault: 'all',
 };
 
 /**
@@ -72,6 +73,7 @@ ArchiveTitle.propTypes = {
   action: PropTypes.func,
   children: PropTypes.node.isRequired,
   filterOptions: PropTypes.arrayOf(PropTypes.string),
+  filterDefault: PropTypes.string,
 };
 
 export default ArchiveTitle;

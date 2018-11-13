@@ -8,6 +8,7 @@ const theme = {
   palette: {
     primary: {
       white: 'rgb(255, 255, 255)',
+      lightGrey: 'rgb(225, 225, 225)',
     },
     highlight: {
       red: 'rgb(189, 63, 59)',

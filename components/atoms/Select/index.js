@@ -14,6 +14,7 @@ import PropTypes from 'prop-types';
  * @param {object} props
  */
 const Select = ({
+  action,
   children,
   defaultValue,
   id,
@@ -23,7 +24,7 @@ const Select = ({
   if (!children) return null;
 
   return (
-    <select defaultValue={defaultValue} id={id} name={name}>
+    <select defaultValue={defaultValue} id={id} name={name} onChange={action}>
       {children}
     </select>
   );
@@ -43,6 +44,7 @@ Select.defaultProps = {
  * PropTypes
  */
 Select.propTypes = {
+  action: PropTypes.func.isRequired,
   children: PropTypes.node,
   defaultValue: PropTypes.string,
   id: PropTypes.string,

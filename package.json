@@ -27,6 +27,7 @@
     "eslint-plugin-react": "^7.11.1"
   },
   "dependencies": {
+    "apparel-sorter": "^0.2.1",
     "next": "^7.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.1",

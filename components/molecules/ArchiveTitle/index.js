@@ -38,7 +38,7 @@ const Wrap = styled.header`
  * Component
  * @param {object} props
  */
-const ArchiveTitle = ({ children, filterOptions }) => (
+const ArchiveTitle = ({ action, children, filterOptions }) => (
   <Wrap>
     <div>
       <Title as="h1">{children}</Title>
@@ -47,10 +47,10 @@ const ArchiveTitle = ({ children, filterOptions }) => (
     {/* Display Select Component if filter options are passed */}
     { filterOptions && (
       <div>
-        <Select defaultValue="label" id="filterSizes" name="filterSizes">
+        <Select defaultValue="label" id="filterSizes" name="filterSizes" action={action}>
           <option value="label" disabled>Filter by size:</option>
           <option value="all">All sizes</option>
-          { filterOptions.map(item => <option key={item} value="item">{item}</option>) }
+          { filterOptions.map(item => <option key={item} value={item}>{item}</option>) }
         </Select>
       </div>
     ) }

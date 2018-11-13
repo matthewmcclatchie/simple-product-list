@@ -9,6 +9,7 @@ const theme = {
     primary: {
       white: 'rgb(255, 255, 255)',
       lightGrey: 'rgb(225, 225, 225)',
+      lightBlue: 'rgb(222, 241, 244)',
     },
     highlight: {
       red: 'rgb(189, 63, 59)',

@@ -32,41 +32,69 @@ const Wrap = styled.div`
 /**
  * Component
  */
-const Index = ({ products, sizes }) => (
-  <Layout>
-    <Wrap>
+class Index extends React.Component {
+  constructor(props) {
+    super(props);
 
-      <ArchiveTitle filterOptions={sizes}>
-        Women's Tops
-      </ArchiveTitle>
+    // Bind the this context to the handler function
+    this.handler = this.handler.bind(this);
 
-      <Articles perRow={4}>
-        {
-          products.map(({
-            isSale,
-            isExclusive,
-            price,
-            productImage,
-            productName,
-            size,
-          }) => (
-            <ArticleCard
-              key={productName}
-              className="articleCard--Product"
-              sale={isSale}
-              exclusive={isExclusive}
-              price={price}
-              imageSrc={productImage}
-              imageAlt={productName}
-              title={productName}
-              sizes={size}
-            />
-          ))
-        }
-      </Articles>
-    </Wrap>
-  </Layout>
-);
+    // Set some state
+    this.state = {
+      displaySizes: 'all',
+    };
+  }
+
+  // This method will be sent to the child component
+  handler(event) {
+    this.setState({
+      displaySizes: event.target.value,
+    });
+  }
+
+  // Render the child component and set the action property with the handler as value
+  render() {
+    return (
+      <Layout>
+        <Wrap>
+          <ArchiveTitle filterOptions={this.props.sizes} action={this.handler}>
+            Women's Tops
+          </ArchiveTitle>
+
+          <Articles perRow={4}>
+            {
+              this.props.products.filter((item) => {
+                // If displaySizes is equal to 'all', show all items.
+                if (this.state.displaySizes === 'all') return item;
+                // Otherwise display items where the displaySizes state property is in the Product's sizes array.
+                return item.size.indexOf(this.state.displaySizes) >= 0;
+              }).map(({
+                isSale,
+                isExclusive,
+                price,
+                productImage,
+                productName,
+                size,
+              }) => (
+                <ArticleCard
+                  key={productName}
+                  className="articleCard--Product"
+                  sale={isSale}
+                  exclusive={isExclusive}
+                  price={price}
+                  imageSrc={productImage}
+                  imageAlt={productName}
+                  title={productName}
+                  sizes={size}
+                />
+              ))
+              }
+          </Articles>
+        </Wrap>
+      </Layout>
+    );
+  }
+}
 
 Index.getInitialProps = async function IndexGIP() {
   return {

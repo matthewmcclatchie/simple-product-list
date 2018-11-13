@@ -18,8 +18,9 @@ import Layout from '../layouts/main';
 /**
  * Components
  */
-import Articles from '../components/organisms/Articles';
+import ArchiveTitle from '../components/molecules/ArchiveTitle';
 import ArticleCard from '../components/molecules/ArticleCard';
+import Articles from '../components/organisms/Articles';
 
 /**
  * Styled Components
@@ -34,6 +35,11 @@ const Wrap = styled.div`
 const Index = ({ products, sizes }) => (
   <Layout>
     <Wrap>
+
+      <ArchiveTitle filterOptions={sizes}>
+        Women's Tops
+      </ArchiveTitle>
+
       <Articles perRow={4}>
         {
           products.map(({

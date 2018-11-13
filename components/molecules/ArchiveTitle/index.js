@@ -60,11 +60,18 @@ const ArchiveTitle = ({ action, children, filterOptions }) => (
 /**
  * defaultProps
  */
-ArchiveTitle.defaultProps = {};
+ArchiveTitle.defaultProps = {
+  action: () => null,
+  filterOptions: null,
+};
 
 /**
  * PropTypes
  */
-ArchiveTitle.propTypes = {};
+ArchiveTitle.propTypes = {
+  action: PropTypes.func,
+  children: PropTypes.node.isRequired,
+  filterOptions: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default ArchiveTitle;

@@ -9,7 +9,10 @@ import styled, { css } from 'styled-components';
  * Styled Components
  */
 const Wrap = styled.b`
-  color: rgb(255, 255, 255);
+  ${({ theme }) => (`
+    color: ${theme.palette.primary.white};
+  `)}
+
   display: inline-block;
   padding: 1rem;
 

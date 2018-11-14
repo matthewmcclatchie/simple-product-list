@@ -50,9 +50,9 @@ class Index extends React.Component {
    * Lifecycle method
    */
   componentDidMount() {
-    const cachedHits = localStorageGet('size');
-    if (cachedHits) {
-      this.setState({ displaySizes: cachedHits });
+    const sizes = localStorageGet('size');
+    if (sizes) {
+      this.setState({ displaySizes: sizes });
     }
 
     this.setState({

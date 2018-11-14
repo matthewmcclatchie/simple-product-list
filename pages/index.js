@@ -46,6 +46,9 @@ class Index extends React.Component {
     };
   }
 
+  /**
+   * Lifecycle method
+   */
   componentDidMount() {
     const cachedHits = localStorage.getItem('myData');
     if (cachedHits) {
@@ -57,7 +60,10 @@ class Index extends React.Component {
     });
   }
 
-  // This method will be sent to the child component
+  /**
+   * Define function to be fired by Child Component
+   * @param {object} event Trigger event
+   */
   handler(event) {
     this.setState({
       displaySizes: event.target.value,
@@ -66,7 +72,10 @@ class Index extends React.Component {
     localStorage.setItem('myData', event.target.value);
   }
 
-  // Render the child component and set the action property with the handler as value
+  /**
+   * Lifecycle method
+   * Add handler function as action to Child Component
+   */
   render() {
     // Destructuring
     const { props, state } = this;

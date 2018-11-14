@@ -42,6 +42,7 @@ class Index extends React.Component {
     // Set some state
     this.state = {
       displaySizes: 'all',
+      loaded: false,
     };
   }
 
@@ -49,8 +50,11 @@ class Index extends React.Component {
     const cachedHits = localStorage.getItem('myData');
     if (cachedHits) {
       this.setState({ displaySizes: cachedHits });
-      return;
     }
+
+    this.setState({
+      loaded: true,
+    });
   }
 
   // This method will be sent to the child component
@@ -71,7 +75,7 @@ class Index extends React.Component {
             Women's Tops
           </ArchiveTitle>
 
-          <Articles perRow={4}>
+          <Articles perRow={4} className={this.state.loaded ? 'loaded' : ''}>
             {
               this.props.products.filter((item) => {
                 // If displaySizes is equal to 'all', show all items.

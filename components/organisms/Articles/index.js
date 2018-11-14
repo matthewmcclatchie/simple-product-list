@@ -23,6 +23,12 @@ const Wrap = styled.div`
   justify-content: center;
   margin: 0 auto;
   max-width: 81.25rem;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+
+  &.loaded {
+    opacity: 1;
+  }
 
   article {
     display: flex;
@@ -47,9 +53,10 @@ const Wrap = styled.div`
  */
 const Articles = ({
   children,
+  className,
   perRow,
 }) => (
-  <Wrap perRow={perRow}>
+  <Wrap perRow={perRow} className={className}>
     {children}
   </Wrap>
 );

@@ -60,7 +60,7 @@ const Anchor = styled.a`
 
 /**
  * Component
- * @param {object} props
+ * @param {object} props // Destructured props
  */
 const ArticleCard = ({
   imageAlt,
@@ -92,7 +92,6 @@ const ArticleCard = ({
   </Wrap>
 );
 
-
 /**
  * defaultProps
  */
@@ -104,7 +103,6 @@ ArticleCard.defaultProps = {
   sale: false,
   exclusive: false,
 };
-
 
 /**
  * PropTypes

@@ -6,11 +6,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 /**
- * Components
- */
-
-
-/**
  * Styled Components
  */
 const Wrap = styled.div`
@@ -46,10 +41,9 @@ const Wrap = styled.div`
   }
 `;
 
-
 /**
  * Component
- * @param {object} props
+ * @param {object} props // Destructure props
  */
 const Articles = ({
   children,
@@ -61,7 +55,6 @@ const Articles = ({
   </Wrap>
 );
 
-
 /**
  * defaultProps
  */
@@ -70,7 +63,6 @@ Articles.defaultProps = {
   perRow: 1,
   children: null,
 };
-
 
 /**
  * PropTypes

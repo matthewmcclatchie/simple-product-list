@@ -32,24 +32,19 @@ const Wrap = styled.b`
 
 /**
  * Component
- * @param {object} props
+ * @param {object} props Destructured props
  */
 const Alert = ({ children, type }) => {
-  if (children) {
-    return (
-      <Wrap type={type}>
-        {children}
-      </Wrap>
-    );
-  }
+  // If no children, return nothing.
+  if (!children) return null;
 
-  return null;
+  // Return Component.
+  return (
+    <Wrap type={type}>
+      {children}
+    </Wrap>
+  );
 };
-
-/**
- * defaultProps
- */
-Alert.defaultProps = {};
 
 /**
  * PropTypes

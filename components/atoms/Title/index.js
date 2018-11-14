@@ -14,23 +14,19 @@ const Wrap = styled.h1`
 
 /**
  * Component
- * @param {object} props
+ * @param {object} props Destructured props
  */
 const Title = ({ as, children }) => {
   // If no children, return nothing.
   if (!children) return null;
 
+  // Return Component.
   return (
     <Wrap as={as}>
       {children}
     </Wrap>
   );
 };
-
-/**
- * defaultProps
- */
-Title.defaultProps = {};
 
 /**
  * PropTypes

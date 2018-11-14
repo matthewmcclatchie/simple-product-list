@@ -14,13 +14,14 @@ const Select = ({
   filterDefault,
   id,
   name,
+  ...rest
 }) => {
   // If no children, return nothing.
   if (!children) return null;
 
   // Return Component.
   return (
-    <select value={filterDefault} id={id} name={name} onChange={action}>
+    <select value={filterDefault} id={id} name={name} onChange={action} {...rest}>
       {children}
     </select>
   );

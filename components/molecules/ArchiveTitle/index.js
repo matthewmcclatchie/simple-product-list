@@ -49,7 +49,7 @@ const ArchiveTitle = ({
 
     {/* Display Select Component if filter options are passed */}
     { filterOptions && (
-      <Select filterDefault={filterDefault} id="filterSizes" name="filterSizes" action={action}>
+      <Select filterDefault={filterDefault} id="filterSizes" name="filterSizes" action={action} aria-Label="Filter by size">
         <option value="label" disabled>Filter by size:</option>
         <option value="all">All sizes</option>
         { filterOptions.map(item => <option key={item} value={item}>{item}</option>) }

@@ -53,6 +53,11 @@ const Image = styled.img`
   margin: 0 auto 0.5rem auto;
 `;
 
+const Anchor = styled.a`
+  color: inherit;
+  text-decoration: none;
+`;
+
 /**
  * Component
  * @param {object} props
@@ -66,22 +71,24 @@ const ArticleCard = ({
   exclusive,
 }) => (
   <Wrap>
-    <Image src={`/static/images/${imageSrc}`} alt={imageAlt} />
+    <Anchor href="#">
+      <Image src={`/static/images/${imageSrc}`} alt={imageAlt} />
 
-    <header>
-      {/* Conditional rendering will only show Component if boolean value is true. */}
-      { sale && <Alert type="sale">Sale</Alert> }
-      { exclusive && <Alert type="exclusive">Exclusive</Alert> }
+      <header>
+        {/* Conditional rendering will only show Component if boolean value is true. */}
+        { sale && <Alert type="sale">Sale</Alert> }
+        { exclusive && <Alert type="exclusive">Exclusive</Alert> }
 
-      <HeaderDetails>
-        <div>
-          <Title as="h2">{title}</Title>
-        </div>
-        <div>
-          <Title as="h3">{price}</Title>
-        </div>
-      </HeaderDetails>
-    </header>
+        <HeaderDetails>
+          <div>
+            <Title as="h2">{title}</Title>
+          </div>
+          <div>
+            <Title as="h3">{price}</Title>
+          </div>
+        </HeaderDetails>
+      </header>
+    </Anchor>
   </Wrap>
 );
 

@@ -55,6 +55,11 @@ const Image = styled.img`
 
 const Anchor = styled.a`
   color: inherit;
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
   text-decoration: none;
 `;
 

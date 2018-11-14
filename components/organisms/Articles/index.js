@@ -26,10 +26,7 @@ const Wrap = styled.div`
   }
 
   article {
-    display: flex;
     flex: 0 0 100%;
-    flex-direction: column;
-    justify-content: space-between;
 
     @media (min-width: 30rem) {
       flex: 0 0 50%;

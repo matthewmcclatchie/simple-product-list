@@ -75,9 +75,9 @@ const ArticleCard = ({
   sale,
   exclusive,
 }) => (
-  <Wrap>
+  <Wrap itemScope itemType="http://schema.org/Product">
     <Anchor href="#">
-      <Image src={`/static/images/${imageSrc}`} alt={imageAlt} />
+      <Image src={`/static/images/${imageSrc}`} alt={imageAlt} itemProp="image" />
 
       <header>
         {/* Conditional rendering will only show Component if boolean value is true. */}
@@ -86,16 +86,19 @@ const ArticleCard = ({
 
         <HeaderDetails>
           <div>
-            <Title as="h2">{title}</Title>
+            <Title as="h2" itemProp="name">{title}</Title>
           </div>
-          <div>
+
+          <div itemProp="offers" itemScope itemType="http://schema.org/Offer">
+            <meta itemProp="priceCurrency" content="AUD" />
             <Title as="h3">
               {/* Added regex to convert price to Number (removing currency symbol). This would be handy when working with actual prices. */}
-              <data value={Number(price.replace(/[^0-9.]+/g, ''))}>{price}</data>
+              <data itemProp="price" value={Number(price.replace(/[^0-9.]+/g, ''))}>{price}</data>
             </Title>
           </div>
         </HeaderDetails>
       </header>
+
     </Anchor>
   </Wrap>
 );

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Component
- * @param {object} props
+ * @param {object} props Destructured props
  */
 const Select = ({
   action,
@@ -17,7 +17,8 @@ const Select = ({
 }) => {
   // If no children, return nothing.
   if (!children) return null;
-  // Otherwise return Component.
+
+  // Return Component.
   return (
     <select value={filterDefault} id={id} name={name} onChange={action}>
       {children}

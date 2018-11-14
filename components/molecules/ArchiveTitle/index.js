@@ -27,7 +27,7 @@ const Wrap = styled.header`
     margin: 0;
   }
 
-  @media (min-width: 40rem) {
+  @media (min-width: 30rem) {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,7 @@ const Wrap = styled.header`
 
 /**
  * Component
- * @param {object} props
+ * @param {object} props // Destructured props
  */
 const ArchiveTitle = ({
   action,
@@ -45,19 +45,15 @@ const ArchiveTitle = ({
   filterOptions,
 }) => (
   <Wrap>
-    <div>
-      <Title as="h1">{children}</Title>
-    </div>
+    <Title as="h1">{children}</Title>
 
     {/* Display Select Component if filter options are passed */}
     { filterOptions && (
-      <div>
-        <Select filterDefault={filterDefault} id="filterSizes" name="filterSizes" action={action}>
-          <option value="label" disabled>Filter by size:</option>
-          <option value="all">All sizes</option>
-          { filterOptions.map(item => <option key={item} value={item}>{item}</option>) }
-        </Select>
-      </div>
+      <Select filterDefault={filterDefault} id="filterSizes" name="filterSizes" action={action}>
+        <option value="label" disabled>Filter by size:</option>
+        <option value="all">All sizes</option>
+        { filterOptions.map(item => <option key={item} value={item}>{item}</option>) }
+      </Select>
     ) }
   </Wrap>
 );

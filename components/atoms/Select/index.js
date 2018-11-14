@@ -3,11 +3,6 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-
-/**
- * Styled Components
- */
 
 /**
  * Component
@@ -16,14 +11,13 @@ import PropTypes from 'prop-types';
 const Select = ({
   action,
   children,
-  defaultValue,
   filterDefault,
   id,
   name,
 }) => {
   // If no children, return nothing.
   if (!children) return null;
-
+  // Otherwise return Component.
   return (
     <select value={filterDefault} id={id} name={name} onChange={action}>
       {children}
@@ -36,7 +30,7 @@ const Select = ({
  */
 Select.defaultProps = {
   children: null,
-  defaultValue: '',
+  filterDefault: '',
   id: '',
   name: '',
 };
@@ -47,7 +41,7 @@ Select.defaultProps = {
 Select.propTypes = {
   action: PropTypes.func.isRequired,
   children: PropTypes.node,
-  defaultValue: PropTypes.string,
+  filterDefault: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
 };

@@ -68,20 +68,23 @@ class Index extends React.Component {
 
   // Render the child component and set the action property with the handler as value
   render() {
+    // Destructuring
+    const { props, state } = this;
+
     return (
       <Layout>
         <Wrap>
-          <ArchiveTitle filterOptions={this.props.sizes} action={this.handler} filterDefault={this.state.displaySizes}>
-            Women's Tops
+          <ArchiveTitle filterOptions={props.sizes} action={this.handler} filterDefault={state.displaySizes}>
+            {"Women's Top"}
           </ArchiveTitle>
 
-          <Articles perRow={4} className={this.state.loaded ? 'loaded' : ''}>
+          <Articles perRow={4} className={state.loaded ? 'loaded' : ''}>
             {
-              this.props.products.filter((item) => {
+              props.products.filter((item) => {
                 // If displaySizes is equal to 'all', show all items.
-                if (this.state.displaySizes === 'all') return item;
+                if (state.displaySizes === 'all') return item;
                 // Otherwise display items where the displaySizes state property is in the Product's sizes array.
-                return item.size.indexOf(this.state.displaySizes) >= 0;
+                return item.size.indexOf(state.displaySizes) >= 0;
               }).map(({
                 isSale,
                 isExclusive,

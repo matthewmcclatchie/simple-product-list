@@ -38,7 +38,12 @@ const Wrap = styled.header`
  * Component
  * @param {object} props
  */
-const ArchiveTitle = ({ action, children, filterOptions, filterDefault }) => (
+const ArchiveTitle = ({
+  action,
+  children,
+  filterDefault,
+  filterOptions,
+}) => (
   <Wrap>
     <div>
       <Title as="h1">{children}</Title>

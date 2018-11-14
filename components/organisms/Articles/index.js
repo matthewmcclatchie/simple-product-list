@@ -66,6 +66,7 @@ const Articles = ({
  * defaultProps
  */
 Articles.defaultProps = {
+  className: '',
   perRow: 1,
   children: null,
 };
@@ -75,6 +76,7 @@ Articles.defaultProps = {
  * PropTypes
  */
 Articles.propTypes = {
+  className: PropTypes.string,
   perRow: PropTypes.number,
   children: PropTypes.node,
 };

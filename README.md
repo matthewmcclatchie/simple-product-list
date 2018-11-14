@@ -19,7 +19,7 @@ After cloning the repository, please follow these steps:
 - In your Terminal application, run `npm install`
 - Once installation is complete, run `npm run build`
 - Once build is complete, run `npm run start`
-- Visit `http://localhost:3000/` in your browser
+- Visit `http://localhost:3000/` (or the address displayed in your Terminal) in your browser
 
 
 ## Built With

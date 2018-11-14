@@ -8,7 +8,7 @@ import styled from 'styled-components';
  * Data
  */
 import allProducts from '../services/products.json';
-import getSizes from '../services/products';
+import { getSizes, localStorageGet, localStorageSet } from '../services/products';
 
 /**
  * Layouts
@@ -50,7 +50,7 @@ class Index extends React.Component {
    * Lifecycle method
    */
   componentDidMount() {
-    const cachedHits = localStorage.getItem('myData');
+    const cachedHits = localStorageGet('size');
     if (cachedHits) {
       this.setState({ displaySizes: cachedHits });
     }
@@ -69,7 +69,7 @@ class Index extends React.Component {
       displaySizes: event.target.value,
     });
 
-    localStorage.setItem('myData', event.target.value);
+    localStorageSet('size', event.target.value);
   }
 
   /**

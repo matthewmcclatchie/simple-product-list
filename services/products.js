@@ -4,7 +4,7 @@ const sorter = require('apparel-sorter');
  * Return array of sizes gathered from JSON data
  * @param {array} products
  */
-export default function getSizes(products) {
+export function getSizes(products) {
   /**
    * Store filtered sizes Array in variable;
    */
@@ -29,4 +29,31 @@ export default function getSizes(products) {
    * Run sizes array through apparel-sorter and return.
    */
   return sorter.sort(sizes);
+}
+
+/**
+ * Get localStorage item
+ * @param {string} key Key of localStorage item to get
+ */
+export function localStorageGet(key) {
+  if (!key) {
+    console.error('Key missing'); // eslint-disable-line
+    return false;
+  }
+
+  return localStorage.getItem(key);
+}
+
+/**
+* Set localStorage item
+ * @param {*} key Key of localStorage item to set
+ * @param {*} val Value of localStorage item to set
+ */
+export function localStorageSet(key, val) {
+  if (!key || !val) {
+    console.error('Key and/or Value missing'); // eslint-disable-line
+    return false;
+  }
+
+  return localStorage.setItem(key, val);
 }

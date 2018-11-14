@@ -88,7 +88,7 @@ class Index extends React.Component {
       <Layout>
         <Wrap>
           <ArchiveTitle filterOptions={props.sizes} action={this.handler} filterDefault={state.displaySizes}>
-            {"Women's Top"}
+            {"Women's Tops"}
           </ArchiveTitle>
 
           <Articles perRow={4} className={state.loaded ? 'loaded' : ''}>

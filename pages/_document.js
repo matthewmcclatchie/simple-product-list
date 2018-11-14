@@ -28,6 +28,8 @@ export default class MyDocument extends Document {
             Simple Product List -
             {" Women's Tops"}
           </title>
+          <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
         </Head>

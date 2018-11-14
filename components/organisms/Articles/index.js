@@ -9,10 +9,6 @@ import styled from 'styled-components';
  * Styled Components
  */
 const Wrap = styled.div`
-  ${({ theme }) => (`
-    border-left: 1px solid ${theme.palette.primary.lightGrey};
-    border-top: 1px solid ${theme.palette.primary.lightGrey};
-  `)}
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

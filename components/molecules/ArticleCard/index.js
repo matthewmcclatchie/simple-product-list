@@ -16,10 +16,9 @@ import Title from '../../atoms/Title';
  */
 const Wrap = styled.article`
   ${({ theme }) => (`
-    border-bottom: 1px solid ${theme.palette.primary.lightGrey};
-    border-right: 1px solid ${theme.palette.primary.lightGrey};
+    border: 1px solid ${theme.palette.primary.lightGrey};
   `)}
-
+  
   padding: 0.625rem;
 `;
 

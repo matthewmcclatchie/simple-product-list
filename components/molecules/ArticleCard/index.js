@@ -89,7 +89,10 @@ const ArticleCard = ({
             <Title as="h2">{title}</Title>
           </div>
           <div>
-            <Title as="h3">{price}</Title>
+            <Title as="h3">
+              {/* Added regex to convert price to Number (removing currency symbol). This would be handy when working with actual prices. */}
+              <data value={Number(price.replace(/[^0-9.]+/g, ''))}>{price}</data>
+            </Title>
           </div>
         </HeaderDetails>
       </header>
